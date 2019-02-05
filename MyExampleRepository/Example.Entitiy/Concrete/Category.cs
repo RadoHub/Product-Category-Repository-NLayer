@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Example.Entitiy.Concrete
 {
-    public class Category : IEntity
+    public partial class Category : IEntity
     {
         public Category()
         {

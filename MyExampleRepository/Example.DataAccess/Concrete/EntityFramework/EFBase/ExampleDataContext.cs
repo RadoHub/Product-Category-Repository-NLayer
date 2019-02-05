@@ -10,8 +10,8 @@ using System.Threading.Tasks;
     {
         public class ExampleDataContext: DbContext
         {
-            public DbSet<Product> Products { get; set; }
-            public DbSet<Category> Categories { get; set; }
+            public virtual DbSet<Product> Products { get; set; }
+            public virtual DbSet<Category> Categories { get; set; }
 
             public ExampleDataContext()
             {

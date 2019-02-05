@@ -26,5 +26,6 @@ namespace Example.Business.Concrete
         {
             return _iProductDA.GetAll();
         }
+
     }
 }

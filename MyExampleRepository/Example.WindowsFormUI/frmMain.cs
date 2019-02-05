@@ -30,9 +30,12 @@ namespace Example.WindowsFormUI
             FillDgwProduct();
         }
 
+
+
         void FillDgwProduct()
         {
             dgwProduct.DataSource = _iProductService.FillDgwProduct();
+            dgwProduct.Columns["CurrentCategory"].Visible = false;
         }
         void FillCbxProductCategory()
         {

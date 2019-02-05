@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Example.Entitiy.Concrete
 {
-    public class Product: IEntity
+    public partial class Product: IEntity
     {
         //one to many relationship between product and category classes
         public int ProductId { get; set; }

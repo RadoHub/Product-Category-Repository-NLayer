@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Example.DataAccess.Abstract
 {
-    public interface IProductDA: IRepository<Product>
+    public interface IProductDA : IRepository<Product>
     {
     }
 }

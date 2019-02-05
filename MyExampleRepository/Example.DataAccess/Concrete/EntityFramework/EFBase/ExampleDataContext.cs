@@ -6,27 +6,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Example.DataAccess.Concrete.EntityFramework.EFBase
-{
-    public class ExampleDataContext: DbContext
+    namespace Example.DataAccess.Concrete.EntityFramework.EFBase
     {
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
-
-        public ExampleDataContext()
+        public class ExampleDataContext: DbContext
         {
-            this.Configuration.LazyLoadingEnabled = false;
-        }
-        static ExampleDataContext()
-        {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ExampleDataContext>());
-        }
+            public DbSet<Product> Products { get; set; }
+            public DbSet<Category> Categories { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
+            public ExampleDataContext()
+            {
+                this.Configuration.LazyLoadingEnabled = false;
+                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ExampleDataContext>());
+            }
 
-            modelBuilder.Entity<Product>().HasRequired<Category>(p => p.CurrentCategory).WithMany(c => c.Products).HasForeignKey<int>(p => p.CategoryId);
+
+            protected override void OnModelCreating(DbModelBuilder modelBuilder)
+            {
+                base.OnModelCreating(modelBuilder);
+
+                modelBuilder.Entity<Product>().HasRequired<Category>(p => p.CurrentCategory).WithMany(c => c.Products).HasForeignKey<int>(p => p.CategoryId);
+            }
         }
     }
-}

@@ -14,6 +14,6 @@ namespace Example.Entitiy.Concrete
         public string ProductName { get; set; }
         public int CategoryId { get; set; }
 
-        public   Category CurrentCategory { get; set; }
+        public virtual Category CurrentCategory { get; set; }
     }
 }
